@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cashier | Restaurant POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pos-container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="sidebar-logo">🍽️ POS</div>
+            <nav>
+                <a href="home.html" class="nav-item active">🧾 Orders</a>
+                <a href="history.html" class="nav-item">📋 History</a>
+                <a href="inventory.html" class="nav-item">📦 Inventory</a>
+            </nav>
+            <div class="cashier-info" id="cashierInfo"></div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- MENU SECTION -->
+        <div class="menu-section">
+            <div class="section-header">
+                <h2>Menu</h2>
+                <div class="category-filters">
+                    <button class="filter-btn active" onclick="filterMenu('All')">All</button>
+                    <button class="filter-btn" onclick="filterMenu('Main')">Main</button>
+                    <button class="filter-btn" onclick="filterMenu('Side')">Side</button>
+                    <button class="filter-btn" onclick="filterMenu('Drink')">Drink</button>
+                </div>
+            </div>
+            <div class="menu-grid" id="menuGrid"></div>
+        </div>
+
+        <!-- ORDER SECTION -->
+        <div class="order-section">
+            <h2>Current Order</h2>
+            <div class="order-items" id="orderItems">
+                <p class="empty-msg">No items added yet</p>
+            </div>
+            <div class="order-summary">
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">GHS 0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="total">GHS 0.00</span>
+                </div>
+                <div class="payment-methods">
+                    <button class="pay-btn" onclick="setPayment('cash')">💵 Cash</button>
+                    <button class="pay-btn" onclick="setPayment('card')">💳 Card</button>
+                    <button class="pay-btn" onclick="setPayment('momo')">📱 MoMo</button>
+                </div>
+                <div class="selected-payment" id="selectedPayment">No payment method selected</div>
+                <button class="place-order-btn" onclick="placeOrder()">Place Order</button>
+                <button class="clear-btn" onclick="clearOrder()">Clear Order</button>
+            </div>
+        </div>
+
+    </div>
+    <script src="home.js"></script>
+</body>
+</html>

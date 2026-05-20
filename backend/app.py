@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_socketio import SocketIO
+from flask_cors import CORS
 from routes.auth import auth_bp
 from routes.orders import orders_bp
 from routes.inventory import inventory_bp
@@ -8,6 +9,7 @@ from routes.reports import reports_bp
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'restaurant-pos-secret-key'
 
+CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 # Register blueprints
