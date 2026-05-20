@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage | Restaurant POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pos-container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="sidebar-logo">🍽️ Manager</div>
+            <nav>
+                <a href="index.html" class="nav-item">📊 Dashboard</a>
+                <a href="orders.html" class="nav-item">🧾 All Orders</a>
+                <a href="inventory.html" class="nav-item">📦 Inventory</a>
+                <a href="manage.html" class="nav-item active">⚙️ Manage</a>
+            </nav>
+            <div class="manager-info" id="managerInfo"></div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="page-header">
+                <h2>⚙️ Manage</h2>
+            </div>
+
+            <div class="manage-grid">
+
+                <!-- ADD EMPLOYEE -->
+                <div class="manage-card">
+                    <h3>👤 Add New Employee</h3>
+                    <p class="manage-subtitle">Create a new cashier or kitchen account</p>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="empName" placeholder="e.g. Ama Mensah" />
+                    </div>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="empUsername" placeholder="e.g. ama123" />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="empPassword" placeholder="Enter password" />
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select id="empRole">
+                            <option value="cashier">Cashier</option>
+                            <option value="kitchen">Kitchen</option>
+                        </select>
+                    </div>
+                    <button class="submit-btn" onclick="addEmployee()">Add Employee</button>
+                    <div class="success-msg" id="empSuccess" style="display:none;">✅ Employee added successfully!</div>
+                    <div class="error-msg" id="empError" style="display:none;">❌ Please fill in all fields!</div>
+
+                    <!-- EMPLOYEE LIST -->
+                    <h4 style="margin-top:24px; margin-bottom:12px; color:#aaa;">Current Employees</h4>
+                    <div id="employeeList"></div>
+                </div>
+
+                <!-- ADD MENU ITEM -->
+                <div class="manage-card">
+                    <h3>🍽️ Add New Menu Item</h3>
+                    <p class="manage-subtitle">Add a new dish or drink to the menu</p>
+
+                    <div class="form-group">
+                        <label>Item Name</label>
+                        <input type="text" id="menuName" placeholder="e.g. Banku & Tilapia" />
+                    </div>
+                    <div class="form-group">
+                        <label>Price (GHS)</label>
+                        <input type="number" id="menuPrice" placeholder="e.g. 45.00" />
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="menuCategory">
+                            <option value="Main">Main</option>
+                            <option value="Side">Side</option>
+                            <option value="Drink">Drink</option>
+                            <option value="Dessert">Dessert</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Available</label>
+                        <select id="menuAvailable">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                    <button class="submit-btn" onclick="addMenuItem()">Add Menu Item</button>
+                    <div class="success-msg" id="menuSuccess" style="display:none;">✅ Menu item added successfully!</div>
+                    <div class="error-msg" id="menuError" style="display:none;">❌ Please fill in all fields!</div>
+
+                    <!-- MENU LIST -->
+                    <h4 style="margin-top:24px; margin-bottom:12px; color:#aaa;">Current Menu</h4>
+                    <div id="menuList"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

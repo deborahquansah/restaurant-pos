@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard | Restaurant POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pos-container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="sidebar-logo">🍽️ Manager</div>
+            <nav>
+                <a href="index.html" class="nav-item active">📊 Dashboard</a>
+                <a href="orders.html" class="nav-item">🧾 All Orders</a>
+                <a href="inventory.html" class="nav-item">📦 Inventory</a>
+                <a href="manage.html" class="nav-item">⚙️ Manage</a>
+            </nav>
+            <div class="manager-info" id="managerInfo"></div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="page-header">
+                <h2>Dashboard Overview</h2>
+                <div class="date-display" id="dateDisplay"></div>
+            </div>
+
+            <!-- SUMMARY CARDS -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-icon">🧾</div>
+                    <div class="summary-label">Total Orders</div>
+                    <div class="summary-value" id="totalOrders">0</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">💰</div>
+                    <div class="summary-label">Total Sales</div>
+                    <div class="summary-value" id="totalSales">GHS 0.00</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">✅</div>
+                    <div class="summary-label">Completed</div>
+                    <div class="summary-value" id="completedOrders">0</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">⏳</div>
+                    <div class="summary-label">Pending</div>
+                    <div class="summary-value" style="color:#F39C12;" id="pendingOrders">0</div>
+                </div>
+            </div>
+
+            <!-- PAYMENT BREAKDOWN -->
+            <div class="section-title">Payment Breakdown</div>
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-icon">💵</div>
+                    <div class="summary-label">Cash</div>
+                    <div class="summary-value" id="cashTotal">GHS 0.00</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📱</div>
+                    <div class="summary-label">Mobile Money</div>
+                    <div class="summary-value" id="momoTotal">GHS 0.00</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">💳</div>
+                    <div class="summary-label">Card</div>
+                    <div class="summary-value" id="cardTotal">GHS 0.00</div>
+                </div>
+            </div>
+
+            <!-- RECENT ORDERS -->
+            <div class="section-title">Recent Orders</div>
+            <div class="table-container">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order #</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Payment</th>
+                            <th>Cashier</th>
+                            <th>Branch</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentOrdersBody"></tbody>
+                </table>
+            </div>
+
+            <!-- LOW STOCK ALERT -->
+            <div class="section-title">⚠️ Low Stock Alerts</div>
+            <div class="table-container">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Current Quantity</th>
+                            <th>Unit</th>
+                            <th>Low Stock Level</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lowStockBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
