@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order History | Restaurant POS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pos-container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <div class="sidebar-logo">🍽️ POS</div>
+            <nav>
+                <a href="home.html" class="nav-item">🧾 Orders</a>
+                <a href="history.html" class="nav-item active">📋 History</a>
+                <a href="inventory.html" class="nav-item">📦 Inventory</a>
+            </nav>
+            <div class="cashier-info" id="cashierInfo"></div>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="page-header">
+                <h2>Order History</h2>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" onclick="filterOrders('all')">All</button>
+                    <button class="filter-btn" onclick="filterOrders('complete')">Completed</button>
+                    <button class="filter-btn" onclick="filterOrders('pending')">Pending</button>
+                </div>
+            </div>
+
+            <!-- SUMMARY CARDS -->
+            <div class="summary-cards">
+                <div class="summary-card">
+                    <div class="summary-label">Total Orders</div>
+                    <div class="summary-value" id="totalOrders">0</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-label">Total Sales</div>
+                    <div class="summary-value" id="totalSales">GHS 0.00</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-label">Cash</div>
+                    <div class="summary-value" id="totalCash">GHS 0.00</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-label">MoMo</div>
+                    <div class="summary-value" id="totalMomo">GHS 0.00</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-label">Card</div>
+                    <div class="summary-value" id="totalCard">GHS 0.00</div>
+                </div>
+            </div>
+
+            <!-- ORDERS TABLE -->
+            <div class="table-container">
+                <table class="orders-table">
+                    <thead>
+                        <tr>
+                            <th>Order #</th>
+                            <th>Items</th>
+                            <th>Total</th>
+                            <th>Payment</th>
+                            <th>Cashier</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="history.js"></script>
+</body>
+</html>

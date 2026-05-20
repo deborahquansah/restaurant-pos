@@ -403,3 +403,118 @@ h1 {
     background-color: #E94560;
     color: #fff;
 }
+/* HISTORY PAGE */
+.main-content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    background-color: #1A1A2E;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.page-header h2 {
+    font-size: 22px;
+}
+
+/* SUMMARY CARDS */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    background-color: #16213E;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #0F3460;
+}
+
+.summary-label {
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+.summary-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #E94560;
+}
+
+/* ORDERS TABLE */
+.table-container {
+    background-color: #16213E;
+    border-radius: 12px;
+    border: 1px solid #0F3460;
+    overflow: hidden;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table th {
+    background-color: #0F3460;
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 14px;
+    color: #aaa;
+    font-weight: 600;
+}
+
+.orders-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid #0F3460;
+}
+
+.orders-table tr:last-child td {
+    border-bottom: none;
+}
+
+.orders-table tr:hover td {
+    background-color: #1A1A2E;
+}
+
+.items-cell {
+    color: #aaa;
+    font-size: 13px;
+    max-width: 200px;
+}
+
+.status-complete {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-pending {
+    background-color: #F39C12;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+/* LOW STOCK STATUS */
+.status-low {
+    background-color: #F39C12;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
