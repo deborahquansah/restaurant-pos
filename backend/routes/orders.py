@@ -15,6 +15,28 @@ def get_orders():
 def get_menu():
     return jsonify(menu_items)
 
+# Add new menu item
+@orders_bp.route('/api/menu', methods=['POST'])
+def add_menu_item():
+    data = request.get_json()
+    name = data.get('name')
+    price = data.get('price')
+    category = data.get('category')
+    available = data.get('available', True)
+
+    if not name or not price or not category:
+        return jsonify({"success": False, "message": "All fields are required"}), 400
+
+    new_item = {
+        "id": len(menu_items) + 1,
+        "name": name,
+        "price": float(price),
+        "category": category,
+        "available": available
+    }
+    menu_items.append(new_item)
+    return jsonify({"success": True, "item": new_item}), 201
+
 # Create new order
 @orders_bp.route('/api/orders', methods=['POST'])
 def create_order():
